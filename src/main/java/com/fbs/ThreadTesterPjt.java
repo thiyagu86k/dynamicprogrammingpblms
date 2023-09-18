@@ -5,6 +5,8 @@
 package com.fbs;
 
 import java.time.LocalDateTime;
+import java.util.IdentityHashMap;
+import java.util.NavigableMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -15,6 +17,8 @@ import java.util.concurrent.Executors;
 public class ThreadTesterPjt {
 
     public static void main(String[] args) {
+        IdentityHashMap<String,String> idMap=new IdentityHashMap<>();
+      //  NavigableMap nvmp=new NavigableMap();
         System.out.println(Integer.MAX_VALUE);
        // ThreadLocal threadLocal=new ThreadLocal();
        ExecutorService executorService=Executors.newFixedThreadPool(4);

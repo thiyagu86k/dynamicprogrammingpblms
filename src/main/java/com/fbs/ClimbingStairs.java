@@ -10,7 +10,7 @@ package com.fbs;
  */
 public class ClimbingStairs {
     public static void main(final String[] args) {
-        System.out.println(climbStairs(6));
+        System.out.println(climbStairs(2));
     }
 
     // Time complexity: O(n)

@@ -4,21 +4,45 @@
  */
 package com.fbs;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+
 /**
  *
  * @author thiyagaraja
  */
 public class CoinsChange {
     public static void main(String[] args) {
-        int coins[]={1,5,6,9};
+        int coins[]={1,2,3};
         int n=coins.length;
         System.out.println("n size: "+n);
-        System.out.println(count(coins, n, 11,'m'));
+        System.out.println(count(coins, n, 4,'m'));
+        new ArrayList<>();
+        String s="abcabcbb";
+        
+        
+
+   
+      
+    
+      
+       Set<Character> charSet=new HashSet<>();
+       charSet.addAll(charList);
         
     }
    static int count(int coins[], int n, int sum,char t)
     {
         System.out.println("sum:" + sum +" n:"+n + " Check L or R: "+t);
+//        StackTraceElement[] stcList=Thread.currentThread().getStackTrace();
+//        for(StackTraceElement stc:stcList){
+//            System.out.println(stc.getMethodName()+"; "+stc.getLineNumber());
+//        }
         // If sum is 0 then there is 1 solution
         // (do not include any coin)
         if (sum == 0)
@@ -37,7 +61,7 @@ public class CoinsChange {
  
         // count is sum of solutions (i)
         // including coins[n-1] (ii) excluding coins[n-1]
-        return count(coins, n - 1, sum,'L') + count(coins, n, sum - coins[n - 1],'R');
+        return count(coins, n, sum - coins[n-1],'L') + count(coins, n - 1, sum,'R')  ;
         
     }
 }

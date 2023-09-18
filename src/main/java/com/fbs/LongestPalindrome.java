@@ -22,17 +22,17 @@ public class LongestPalindrome {
         int start = 0, end = 0;
         for (int i = 0; i < s.length(); i++) {
             final int len1 = expandAroundCenter(s, i, i); // odd length  //babad
-            System.out.println("i="+i+" len1="+len1);
+           
             final int len2 = expandAroundCenter(s, i, i + 1); // even length
            
-            System.out.println( "i="+i+ " len2="+ len2);
+            
             final int len = Math.max(len1, len2);
-            System.out.println("MaxLen= "+len);
+            
             if (len > (end - start)) {
                 start = i - (len - 1) / 2;
                
                 end = i + len / 2;
-                 System.out.println("Start= "+start +"end= "+end);
+                 
             }
         }
         return s.substring(start, end + 1);
@@ -42,17 +42,13 @@ public class LongestPalindrome {
         int L = left, R = right;
         while (L >= 0 && R < s.length() && s.charAt(L) == s.charAt(R)) {
             L--;
-            System.out.println("L= "+L);
+            
             R++;
-            System.out.println("R= "+R);
-        }
-        //-1-(+1)-1
-       
-                
+            
+        }        
         int v= R - L -1;
-        System.out.println("V= "+v);
         return v;
-      //  return R - L - 1;
+      
     }
     
 }
