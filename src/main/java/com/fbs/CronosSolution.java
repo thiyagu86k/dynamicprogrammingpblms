@@ -12,9 +12,8 @@ public class CronosSolution {
      static public boolean checkPalindromeFormation(String a, String b) {
         int n = a.length();
         for (int i = 0; i < n; i++) {
-            System.out.println("a: "+a.substring(0,i) + " b: "+b.substring(i,n));
-            String a1 = a.substring(0, i) + b.substring(i, n);
-            System.out.println("b: "+b.substring(0,i) + " a: "+a.substring(i, n));
+            
+            String a1 = a.substring(0, i) + b.substring(i, n);            
             String b1 = b.substring(0, i) + a.substring(i, n);
             if (isPalindrome(a1) || isPalindrome(b1)) {
                 return true;
